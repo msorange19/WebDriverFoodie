@@ -3,10 +3,12 @@ import CommonPage from "../pages/common.js";
 
 
 describe('SplashPage', () => {
-    const splashPage = new SplashPage();
+    let splashPage
+    before(() => {
+        splashPage = new SplashPage();
+    })
 
-    it('Should have location Allow button', async() => {
-
+    it('Should have location Allow button', async () => {
         await splashPage.verifyLocationAccess();
-})
+    })
 })

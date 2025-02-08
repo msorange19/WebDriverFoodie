@@ -28,6 +28,9 @@ export default class LogInPage{
     getLogInButton(){
         return $('//android.widget.TextView[@text="Sign in with email"]')
     }
+    getInvalidLogInPopUpClose(){
+        return $('//android.widget.TextView[@text="Ok"]')
+    }
     async verifyLoginBtn()
     {
         await this.getLogInBtn().click();
@@ -55,5 +58,8 @@ export default class LogInPage{
     async verifyInvalidEmailORPasswordErrorText()
     {
         return this.getInvalidEmailORPasswordErrorText().getText();
+    }
+    async verifyInvalidLogInPopUpCloseErrorOkButton(){
+        await this.getInvalidLogInPopUpClose().click();
     }
 }
