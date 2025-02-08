@@ -9,16 +9,25 @@ export default class LogInPage{
     }
     getEmailField()
     {
-        return $('//android.widget.EditText[@text="Email"]')
+        return $('//android.widget.EditText[@hint="Email"]')
     }
     getBlankEmailField(){
         return $('//android.widget.TextView[@text="Email is required."]')
     }
     getPasswordField()
     {
-        return $('//android.widget.EditText[@text="Password"]')
+        return $('//android.widget.EditText[@hint="Password"]')
     }
-
+    getBlankPasswordField(){
+        return $('//android.widget.TextView[@text="Please enter a valid password"]')
+    }
+    getInvalidEmailORPasswordErrorText()
+    {
+        return $('//android.widget.TextView[@text="Invalid username or password."]')
+    }
+    getLogInButton(){
+        return $('//android.widget.TextView[@text="Sign in with email"]')
+    }
     async verifyLoginBtn()
     {
         await this.getLogInBtn().click();
@@ -27,8 +36,24 @@ export default class LogInPage{
 
     async verifyLogIn(email, password){
         await this.getEmailField().click();
-        await this.getEmailField().setValue(email);
+        await this.getEmailField().setValue(email.toString());
+        await this.getPasswordField().waitForDisplayed({timeout:5000});
         await this.getPasswordField().click();
         await this.getPasswordField().setValue(password);
+        await driver.hideKeyboard();
+        await this.getLogInButton().click();
+    }
+
+    async verifyBlankEmailFieldErrorText()
+    {
+        return this.getBlankEmailField().getText();
+    }
+    async verifyBlankPasswordFieldErrorText()
+    {
+        return this.getBlankPasswordField().getText();
+    }
+    async verifyInvalidEmailORPasswordErrorText()
+    {
+        return this.getInvalidEmailORPasswordErrorText().getText();
     }
 }
