@@ -1,5 +1,11 @@
 {
   "valid_data_log_in": {
-    "user_name":
+    "user_name": "muhaiminulbs23@gmail.com",
+    "password": "1234@Abc"
+  },
+  "invalid_data_log_in": {
+    "user_name": "muhaiminulbs232@gmail.com",
+    "password": "12342@Abc"
   }
+
 }

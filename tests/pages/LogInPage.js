@@ -1,65 +1,68 @@
-export default class LogInPage{
-    getLogInBtn()
-    {
+export default class LogInPage {
+    getLogInBtn() {
         return $('//android.widget.TextView[@text="Log In"]');
     }
-    getContinueWithEmailLogIn()
-    {
+
+    getContinueWithEmailLogIn() {
         return $('//android.widget.TextView[@text="Continue with Email"]')
     }
-    getEmailField()
-    {
+
+    getEmailField() {
         return $('//android.widget.EditText[@hint="Email"]')
     }
-    getBlankEmailField(){
+
+    getBlankEmailField() {
         return $('//android.widget.TextView[@text="Email is required."]')
     }
-    getPasswordField()
-    {
+
+    getPasswordField() {
         return $('//android.widget.EditText[@hint="Password"]')
     }
-    getBlankPasswordField(){
+
+    getBlankPasswordField() {
         return $('//android.widget.TextView[@text="Please enter a valid password"]')
     }
-    getInvalidEmailORPasswordErrorText()
-    {
+
+    getInvalidEmailORPasswordErrorText() {
         return $('//android.widget.TextView[@text="Invalid username or password."]')
     }
-    getLogInButton(){
+
+    getLogInButton() {
         return $('//android.widget.TextView[@text="Sign in with email"]')
     }
-    getInvalidLogInPopUpClose(){
+
+    getInvalidLogInPopUpClose() {
         return $('//android.widget.TextView[@text="Ok"]')
     }
-    async verifyLoginBtn()
-    {
+
+    async verifyLoginBtn() {
         await this.getLogInBtn().click();
         await this.getContinueWithEmailLogIn().click();
     }
 
-    async verifyLogIn(email, password){
+    async verifyLogIn(email, password) {
         await this.getEmailField().click();
         await this.getEmailField().setValue(email.toString());
-        await this.getPasswordField().waitForDisplayed({timeout:5000});
+        await this.getPasswordField().waitForDisplayed({timeout: 5000});
         await this.getPasswordField().click();
         await this.getPasswordField().setValue(password);
         await driver.hideKeyboard();
         await this.getLogInButton().click();
     }
 
-    async verifyBlankEmailFieldErrorText()
-    {
+    async verifyBlankEmailFieldErrorText() {
         return this.getBlankEmailField().getText();
     }
-    async verifyBlankPasswordFieldErrorText()
-    {
+
+    async verifyBlankPasswordFieldErrorText() {
         return this.getBlankPasswordField().getText();
     }
-    async verifyInvalidEmailORPasswordErrorText()
-    {
+
+    async verifyInvalidEmailORPasswordErrorText() {
         return this.getInvalidEmailORPasswordErrorText().getText();
     }
-    async verifyInvalidLogInPopUpCloseErrorOkButton(){
+
+    async verifyInvalidLogInPopUpCloseErrorOkButton() {
         await this.getInvalidLogInPopUpClose().click();
     }
 }

@@ -69,7 +69,7 @@ export const config = {
         "appium:app": "app/foodiv7.2.9_antisplit.apk",
         "appium:appPackage": "com.foodiBd",
         "appium:appActivity": "com.foodiBd.MainActivity",
-        "appium:autoGrantPermissions": true,
+        "appium:autoGrantPermissions": false,
         "appium:noReset": true
 
     }],
