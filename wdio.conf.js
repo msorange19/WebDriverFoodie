@@ -1,3 +1,6 @@
+import dotenv from 'dotenv';
+dotenv.config();
+
 export const config = {
     //
     // ====================
@@ -37,6 +40,12 @@ export const config = {
             ]
         }
         ,
+    environment: process.env.ENV || 'production',
+    baseUrl: process.env.BASE_URL || 'https://api.foodibd.com/',
+    envBaseUrls: {
+        staging: 'https://api.staging.foodibd.com/',//assuming
+        production: 'https://api.foodibd.com/',
+    },
     //
     // ============
     // Capabilities
@@ -121,7 +130,12 @@ export const config = {
     // Services take over a specific job you don't want to take care of. They enhance
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
-    services: ['appium'],
+    services: [
+        ['appium'], // Add the Appium service
+    ],
+    appium: {
+        command: 'appium', // Make sure this line is here for globally installed Appium
+    },
 
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber

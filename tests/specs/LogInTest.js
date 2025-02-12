@@ -1,7 +1,9 @@
 import CommonPage from "../pages/common.js";
 import LogInPage from "../pages/LogInPage.js";
 import testData  from "../config.json"
-
+import {loginAttempt} from "../apiCallBack/apiUtils.js";
+import fs from 'fs';
+import path from 'path';
 
 describe('login', () => {
     let logInPage;
@@ -35,6 +37,9 @@ describe('login', () => {
     })
     it('Should login successfully', async() => {
         await logInPage.verifyLogIn(testData.valid_data_log_in.user_name,testData.valid_data_log_in.password);
+        const newUser = await loginAttempt({ userName:testData.valid_data_log_in.user_name ,password : testData.valid_data_log_in.password });
+        console.log('New User:', newUser);
+
     })
 
 })
