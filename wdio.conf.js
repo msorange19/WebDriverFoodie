@@ -75,10 +75,10 @@ export const config = {
         "appium:deviceName": "Galaxy A54",
         "appium:platformVersion": "14.0",
         "appium:automationName": "UiAutomator2",
-        "appium:app": "app/foodiv7.2.9_antisplit.apk",
+        "appium:app": "app/foodiv7.3.3_antisplit.apk",
         "appium:appPackage": "com.foodiBd",
         "appium:appActivity": "com.foodiBd.MainActivity",
-        "appium:autoGrantPermissions": false,
+        "appium:autoGrantPermissions": true,
         "appium:noReset": true
 
     }],

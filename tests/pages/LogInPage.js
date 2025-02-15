@@ -41,10 +41,8 @@ export default class LogInPage {
     }
 
     async verifyLogIn(email, password) {
-        await this.getEmailField().click();
         await this.getEmailField().setValue(email.toString());
         await this.getPasswordField().waitForDisplayed({timeout: 5000});
-        await this.getPasswordField().click();
         await this.getPasswordField().setValue(password);
         await driver.hideKeyboard();
         await this.getLogInButton().click();

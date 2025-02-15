@@ -19,7 +19,8 @@ export async function loginAttempt(loginData) {
     try {
 
         const responseJsonData = await axios.post(base_url + '/users/api/Authentication/Customer/Login', loginData, {headers});
-        if (responseJsonData.data && responseJsonData.data.data.token != null) {
+        console.log(responseJsonData);
+        if (responseJsonData.data.data.token != null) {
             bearerToken = responseJsonData.data.data.token;
             console.log('BearerToken:', bearerToken);
         }

@@ -1,7 +1,9 @@
 export default class CommonPage {
     get breadCrumbBtn(){
-        return $('com.horcrux.svg.k0')
+        return $('com.horcrux.svg.i0')
     }
+
+
 
     async verifyBreadCrumb(){
         await this.breadCrumbBtn.click();
@@ -9,4 +11,12 @@ export default class CommonPage {
 
     }
 
+
+
+
+
+}
+export function randomSelections(randomSelector)
+{
+    return  Math.floor(Math.random() * randomSelector)
 }
