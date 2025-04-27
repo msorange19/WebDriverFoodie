@@ -1,0 +1,8 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","5075","Should click cuisine randomly from home page","","Sun Feb 23 22:07:30 GMT+06:00 2025","passed","Sun Feb 23 22:07:35 GMT+06:00 2025","","HomePage","",""
+"","9810","should have login with email button","","Sun Feb 23 22:06:53 GMT+06:00 2025","passed","Sun Feb 23 22:07:03 GMT+06:00 2025","","login Validation","",""
+"","5656","Should have invalid error","","Sun Feb 23 22:07:13 GMT+06:00 2025","passed","Sun Feb 23 22:07:18 GMT+06:00 2025","","login Validation","",""
+"","5325","Should login successfully","","Sun Feb 23 22:07:18 GMT+06:00 2025","broken","Sun Feb 23 22:07:24 GMT+06:00 2025","","login Validation","",""
+"","4448","Should have password field validation error","","Sun Feb 23 22:07:08 GMT+06:00 2025","passed","Sun Feb 23 22:07:13 GMT+06:00 2025","","login Validation","",""
+"","4162","Should have location Allow button","","Sun Feb 23 22:06:43 GMT+06:00 2025","passed","Sun Feb 23 22:06:47 GMT+06:00 2025","","SplashPage","",""
+"","5786","Should have email field validation error","","Sun Feb 23 22:07:03 GMT+06:00 2025","passed","Sun Feb 23 22:07:08 GMT+06:00 2025","","login Validation","",""

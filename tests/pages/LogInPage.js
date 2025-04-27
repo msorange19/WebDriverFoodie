@@ -1,6 +1,6 @@
 export default class LogInPage {
     getLogInBtn() {
-        return $('//android.widget.TextView[@text="Log In"]');
+        return $('//android.widget.TextView[@text="Continue"]');
     }
 
     getContinueWithEmailLogIn() {

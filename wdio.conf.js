@@ -36,7 +36,8 @@ export const config = {
             sequentialTests:[
 
                 './tests/specs/SplashTest.js',
-                './tests/specs/LogInTest.js'
+                './tests/specs/LogInTest.js',
+                './tests/specs/HomeTest.js',
             ]
         }
         ,
@@ -75,7 +76,7 @@ export const config = {
         "appium:deviceName": "Galaxy A54",
         "appium:platformVersion": "14.0",
         "appium:automationName": "UiAutomator2",
-        "appium:app": "app/foodiv7.3.3_antisplit.apk",
+        "appium:app": "app/foodiv7.3.4_antisplit.apk",
         "appium:appPackage": "com.foodiBd",
         "appium:appActivity": "com.foodiBd.MainActivity",
         "appium:autoGrantPermissions": true,
@@ -158,7 +159,14 @@ export const config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
-    reporters: ['spec'],
+    reporters: [
+        ['allure', {
+            outputDir: 'allure-results',
+            disableWebdriverStepsReporting: false,
+            disableWebdriverScreenshotsReporting: false
+        }]
+    ],
+
 
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/

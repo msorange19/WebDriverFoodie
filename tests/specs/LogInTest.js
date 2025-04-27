@@ -1,20 +1,15 @@
 import CommonPage from "../pages/common.js";
 import LogInPage from "../pages/LogInPage.js";
-import HomePage  from "../pages/HomePage.js";
 import testData  from "../config.json"
-import {loginAttempt} from "../apiCallBack/apiUtils.js";
-import fs from 'fs';
-import path from 'path';
+import {getCuisinesList, loginAttempt} from "../apiCallBack/apiUtils.js";
 
-describe('login', () => {
+
+describe('login Validation' , () => {
     let logInPage;
     let commonPage;
-    let homePage;
-
     before(() => {
         logInPage = new LogInPage();
         commonPage = new CommonPage();
-        homePage = new HomePage();
     })
 
     it('should have login with email button', async()=>{
@@ -41,8 +36,7 @@ describe('login', () => {
     it('Should login successfully', async() => {
         await logInPage.verifyLogIn(testData.valid_data_log_in.user_name,testData.valid_data_log_in.password);
         const newUser = await loginAttempt({ userName:testData.valid_data_log_in.user_name ,password : testData.valid_data_log_in.password });
-        console.log('New User:', newUser);
-        await homePage.verifyRandomCuisinesSelections();
+        console.log('newUser', newUser);
 
     })
 

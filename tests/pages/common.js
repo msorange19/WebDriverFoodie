@@ -1,22 +1,16 @@
 export default class CommonPage {
-    get breadCrumbBtn(){
-        return $('com.horcrux.svg.i0')
+    get accountBtn() {
+        return $('//android.widget.TextView[@text="Account"]')
     }
 
-
-
-    async verifyBreadCrumb(){
-        await this.breadCrumbBtn.click();
-        await this.breadCrumbBtn.saveScreenshot('tests/screenshot/breadcrumb_element.png');
+    async verifyBreadCrumb() {
+        await this.accountBtn.click();
+        await this.accountBtn.saveScreenshot('tests/screenshot/breadcrumb_element.png');
 
     }
-
-
-
-
 
 }
-export function randomSelections(randomSelector)
-{
-    return  Math.floor(Math.random() * randomSelector)
+
+export function randomSelections(randomSelector) {
+    return Math.floor(Math.random() * randomSelector)
 }
